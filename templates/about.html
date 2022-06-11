@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+about
+{% endblock title %}
+
+
+{% block body %}
+
+<div class="container text-center">
+    <h1 class="text-center mt-2 py-3" style="background-color: rebeccapurple;">Question Section</h1>
+
+    <form action="/about" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="question" class="form-label">Write Your Question Here</label>
+            <input type="text" class="form-control" name="question" id="text" aria-describedby="Question">
+
+            <div class="mb-3">
+                <label for="desc" class="form-label">Feedback</label>
+                <textarea name="feedback" class="form-control" id="text" cols="30" rows="10"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock body %}
